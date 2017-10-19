@@ -1,0 +1,27 @@
+﻿@model SEE.TinyBusinessMarket.BackEnd.Common.Mail.DownloadMailModel
+<html>
+<head>
+    <title>Zamówienie zostało przygotowane.</title>
+    <style>
+        body {
+            font-family: Verdana;
+            font-size: 9pt;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Szanowni Państwo,</p>
+        <p>Informujemy, że otrzymaliśmy zapłatę za złożone zamówienie.</p>
+        <ul>
+            <li>Prosimy kliknąć na następujący link, bądź skopiować go do adresu przeglądarki: <a href="@Model.BaseUrl/Order/Download?token=@Model.Token.Data">@Model.BaseUrl/Order/Download?token=@Model.Token.Data</a></li>
+        </ul>
+
+        <p>Z poważaniem,</p>
+        <p>Zespół projektu <strong>TinyBusiness</strong></p>
+        <p>
+            Biuro Projektu<br />
+        </p>
+    </div>
+</body>
+</html>

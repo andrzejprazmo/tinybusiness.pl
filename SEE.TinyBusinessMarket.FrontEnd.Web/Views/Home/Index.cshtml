@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div ng-app="tinyBusiness">
+    <div ng-view></div>
+</div>
+
+
+@section Scripts {
+<script src="~/js/angular/angular.bootstrap.js"></script>
+
+<script src="~/js/angular/services/dashboard.service.js"></script>
+<script src="~/js/angular/services/customer.service.js"></script>
+<script src="~/js/angular/services/payment.service.js"></script>
+<script src="~/js/angular/services/admin.service.js"></script>
+
+<script src="~/js/angular/controllers/dashboard.controller.js"></script>
+<script src="~/js/angular/controllers/customer.controller.js"></script>
+<script src="~/js/angular/controllers/payment.controller.js"></script>
+<script src="~/js/angular/controllers/admin.controller.js"></script>
+}
+

@@ -1,0 +1,149 @@
+﻿<form ng-submit="submit(model)" cg-busy="{promise:promise,message:'Proszę czekać...',backdrop:true,delay:0,minDuration:0}">
+    <div ng-if="completed" class="panel panel-default">
+        <div class="panel-body">
+            <div class="page-title">
+                <h1>Formularz zakupowy</h1>
+            </div>
+            <div class="well well-info">
+                <table class="table table-condensed">
+                    <tr><th>Lp.</th><th>Nazwa produktu</th><th>Ilość</th><th>Cena jednostkowa (zł)</th><th>Stawka VAT</th><th>Wartość netto (zł)</th><th>Wartość brutto (zł)</th></tr>
+                    <tr>
+                        <td>1.</td>
+                        <td>{{model.Product.FullName}}</td>
+                        <td class="text-right">1</td>
+                        <td class="text-right">{{model.Product.UnitPrice | currency: ''}}</td>
+                        <td class="">{{model.Product.VatRateName}}</td>
+                        <td class="text-right">{{model.Product.UnitPrice | currency: ''}}</td>
+                        <td class="text-right">{{model.Product.GrossPrice | currency: ''}}</td>
+                    </tr>
+                    <tr><td colspan="6" class="text-right"><strong>RAZEM (zł):</strong></td><td class="text-right"><strong>{{model.Product.GrossPrice | currency: ''}}</strong></td></tr>
+                </table>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-xl-8 col-sm-10 col-xs-12">
+                    <div class="form-group" ng-class="{'has-error':model.Customer.Email.HasError}">
+                        <label for="Email">*Adres email</label>
+                        <input type="text" class="form-control" id="Email" ng-model="model.Customer.Email.Value" maxlength="128">
+                        <div class="annotation error-annotation" ng-show="model.Customer.Email.HasError">{{model.Customer.Email.ErrorMessage}}</div>
+                    </div>
+                </div>
+            </div>
+            <fieldset class="form-section form-group">
+                <legend>Dane do faktury VAT</legend>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group" ng-class="{'has-error':model.Customer.Name.HasError}">
+                            <label for="Name">*Nazwa przedsiębiorstwa</label>
+                            <input type="text" class="form-control" id="Name" ng-model="model.Customer.Name.Value" maxlength="128">
+                            <div class="annotation error-annotation" ng-show="model.Customer.Name.HasError">{{model.Customer.Name.ErrorMessage}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-sm-6 col-xs-12">
+                        <div class="form-group" ng-class="{'has-error':model.Customer.Nip.HasError}">
+                            <label for="Nip">*Numer NIP</label>
+                            <input type="text" class="form-control" id="Nip" ng-model="model.Customer.Nip.Value" maxlength="12" ui-mask="9999999999">
+                            <div class="annotation error-annotation" ng-show="model.Customer.Nip.HasError">{{model.Customer.Nip.ErrorMessage}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group" ng-class="{'has-error':model.Customer.StreetNumber.HasError}">
+                            <label for="StreetNumber">*Ulica (miejscowość), nr domu / lokalu</label>
+                            <input type="text" class="form-control" id="StreetNumber" ng-model="model.Customer.StreetNumber.Value" maxlength="128">
+                            <div class="annotation error-annotation" ng-show="model.Customer.StreetNumber.HasError">{{model.Customer.StreetNumber.ErrorMessage}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="form-group" ng-class="{'has-error':model.Customer.ZipCode.HasError}">
+                            <label for="ZipCode">*Kod pocztowy</label>
+                            <input type="text" class="form-control" id="ZipCode" ng-model="model.Customer.ZipCode.Value" maxlength="12" ui-mask="99-999" model-view-value="true">
+                            <div class="annotation error-annotation" ng-show="model.Customer.ZipCode.HasError">{{model.Customer.ZipCode.ErrorMessage}}</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="form-group" ng-class="{'has-error':model.Customer.City.HasError}">
+                            <label for="City">*Poczta</label>
+                            <input type="text" class="form-control" id="City" ng-model="model.Customer.City.Value" maxlength="128">
+                            <div class="annotation error-annotation" ng-show="model.Customer.City.HasError">{{model.Customer.City.ErrorMessage}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+            <fieldset class="form-section form-group">
+                <legend>Dane do płatności</legend>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group" ng-class="{'has-error':model.Customer.FirstName.HasError}">
+                            <label for="FirstName">*Imię</label>
+                            <input type="text" class="form-control" id="FirstName" ng-model="model.Customer.FirstName.Value" maxlength="128">
+                            <div class="annotation error-annotation" ng-show="model.Customer.FirstName.HasError">{{model.Customer.FirstName.ErrorMessage}}</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="form-group" ng-class="{'has-error':model.Customer.LastName.HasError}">
+                            <label for="LastName">*Nazwisko</label>
+                            <input type="text" class="form-control" id="LastName" ng-model="model.Customer.LastName.Value" maxlength="128">
+                            <div class="annotation error-annotation" ng-show="model.Customer.LastName.HasError">{{model.Customer.LastName.ErrorMessage}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group" ng-class="{'has-error':model.Customer.Phone.HasError}">
+                            <label for="Phone">Telefon</label>
+                            <input type="text" class="form-control" id="Phone" ng-model="model.Customer.Phone.Value" maxlength="128">
+                            <div class="annotation error-annotation" ng-show="model.Customer.Phone.HasError">{{model.Customer.Phone.ErrorMessage}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-section form-group">
+                <legend>Forma płatności</legend>
+                <!--<div class="radio"><label style="text-decoration:line-through;"><input type="radio" id="PaymentType" name="PaymentType" ng-value="'PAYU'" ng-model="model.PaymentType" disabled="disabled">Płatności błyskawiczne PayU</label></div>-->
+                <div class="radio"><label><input type="radio" id="PaymentType" name="PaymentType" ng-value="'REMITANCE'" ng-model="model.PaymentType">Płatność zwykłym przelewem</label></div>
+                <div class="well well-sm well-info">
+                    <p class="small" ng-show="model.PaymentType === 'PAYU'">
+                        Po zatwierdzeniu formularza zostaniesz przekierowany do systemu płatności błyskawicznych PayU.
+                        Po dokonaniu płatności, na podany przez Ciebie adres email zostanie wysłana faktura VAT oraz link do strony, gdzie będziesz mógł pobrać zamówione oprogramowanie.
+                    </p>
+                    <p class="small" ng-show="model.PaymentType === 'REMITANCE'">
+                        Po zatwierdzeniu formularza na podany przez Ciebie adres email zostanie wysłana faktura "pro forma". Prosimy o opłacenie tej faktury, aby dokończyć transakcję zakupu.
+                        Czas oczekiwania na realizację zamówienia po wybraniu tej formy płatności wynosi 48h.
+                    </p>
+                </div>
+            </fieldset>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr/>
+                    <div class="small">
+                        <em>* Uwaga! Pola oznaczone gwiazdką są polami obowiązkowymi. Twój adres email będzie służył nam do komunikacji z Tobą, wobec tego zwróć uwagę na to, czy jest poprawny.</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-xs-4">
+                    <a href="#/dashboard" class="btn btn-default">Anuluj</a>
+                </div>
+                <div class="col-xs-8">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary">Zarejestruj i zapłać</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="1.18.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.0.0" />
+    <PackageReference Include="Syncfusion.XlsIO.NETStandard14" Version="15.3140.0.26" />
+    <PackageReference Include="Syncfusion.Compression.NETStandard14" Version="15.3140.0.26" />
+    <PackageReference Include="Syncfusion.EJ.Pivot" Version="15.3600.0.26" />
+    <PackageReference Include="Syncfusion.EJ.AspNet.Core" Version="15.3600.0.26" />
+    <PackageReference Include="Syncfusion.Pdf.NETStandard14" Version="15.3140.0.26" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SEE.TinyBusinessMarket.BackEnd.Common\SEE.TinyBusinessMarket.BackEnd.Common.csproj" />
+  </ItemGroup>
+
+</Project>

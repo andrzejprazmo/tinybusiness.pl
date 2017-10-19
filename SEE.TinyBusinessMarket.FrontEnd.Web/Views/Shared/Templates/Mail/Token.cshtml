@@ -1,0 +1,28 @@
+@model SEE.TinyBusinessMarket.BackEnd.Common.Mail.DownloadMailModel
+<html>
+<head>
+    <title>Hasło jednorazowe.</title>
+    <style>
+        body {
+            font-family: Verdana;
+            font-size: 9pt;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Szanowni Państwo,<br/>
+        Informujemy, że wygenerowaliśmy nowe hasło jednorazowe, dzieki któremu możecie Państwo zalogować się na swój profil w naszym Systemie.</p>
+        <p>Prosimy kliknąć w następujący link, bądź skopiować go do adresu przeglądarki:<br/>
+        <a href="@Model.BaseUrl/Customer/Login?secret=@Model.Token.Data">@Model.BaseUrl/Customer/Login?secret=@Model.Token.Data</a></p>
+        <p><b>Uwaga!</b> Link jest ważny do <strong>@Model.Token.Expires.ToString("yyyy-MM-dd HH:mm")</strong> oraz można go wykorzystać tylko raz.</p>
+        <p>W przypadku pytań i wątpliwości prosimy o kontakt mailowy na adres: <a href="mailto:biuro@tinybusiness.pl">biuro@tinybusiness.pl</a></p>
+        <p>
+            Z poważaniem,<br />
+            Zespół projektu <strong>TinyBusiness</strong><br />
+            <a href="mailto:biuro@tinybusiness.pl">biuro@tinybusiness.pl</a>
+        </p>
+        <p style="font-size:90%;"><em>Uwaga! Wiadomość została wysłana automatycznie. Prosimy nie odpowiadać na nią.</em></p>
+    </div>
+</body>
+</html>

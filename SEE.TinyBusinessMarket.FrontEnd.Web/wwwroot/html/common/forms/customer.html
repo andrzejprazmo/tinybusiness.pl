@@ -1,0 +1,68 @@
+﻿<div class="row">
+    <div class="col-xs-12">
+        <div class="form-group" ng-class="{'has-error':model.Customer.Name.HasError}">
+            <label for="Name">Nazwa</label>
+            <input type="text" class="form-control" id="Name" ng-model="model.Customer.Name.Value" maxlength="128">
+            <div class="error-annotation" ng-show="model.Customer.Name.HasError">{{model.Customer.Name.ErrorMessage}}</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-4 col-sm-6 col-xs-12">
+        <div class="form-group" ng-class="{'has-error':model.Customer.Nip.HasError}">
+            <label for="Nip">Nip</label>
+            <input type="text" class="form-control" id="Nip" ng-model="model.Customer.Nip.Value" maxlength="12" ui-mask="9999999999">
+            <div class="error-annotation" ng-show="model.Customer.Nip.HasError">{{model.Customer.Nip.ErrorMessage}}</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="form-group" ng-class="{'has-error':model.Customer.StreetNumber.HasError}">
+            <label for="StreetNumber">Ulica, nr domu / lokalu</label>
+            <input type="text" class="form-control" id="StreetNumber" ng-model="model.Customer.StreetNumber.Value" maxlength="128">
+            <div class="error-annotation" ng-show="model.Customer.StreetNumber.HasError">{{model.Customer.StreetNumber.ErrorMessage}}</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-4">
+        <div class="form-group" ng-class="{'has-error':model.Customer.ZipCode.HasError}">
+            <label for="ZipCode">Kod pocztowy</label>
+            <input type="text" class="form-control" id="ZipCode" ng-model="model.Customer.ZipCode.Value" maxlength="12" ui-mask="99-999" model-view-value="true" >
+            <div class="error-annotation" ng-show="model.Customer.ZipCode.HasError">{{model.Customer.ZipCode.ErrorMessage}}</div>
+        </div>
+    </div>
+    <div class="col-xs-8">
+        <div class="form-group" ng-class="{'has-error':model.Customer.City.HasError}">
+            <label for="City">Poczta</label>
+            <input type="text" class="form-control" id="City" ng-model="model.Customer.City.Value" maxlength="128">
+            <div class="error-annotation" ng-show="model.Customer.City.HasError">{{model.Customer.City.ErrorMessage}}</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-5">
+        <div class="form-group" ng-class="{'has-error':model.Customer.FirstName.HasError}">
+            <label for="FirstName">Imię</label>
+            <input type="text" class="form-control" id="FirstName" ng-model="model.Customer.FirstName.Value" maxlength="128">
+            <div class="error-annotation" ng-show="model.Customer.FirstName.HasError">{{model.Customer.FirstName.ErrorMessage}}</div>
+        </div>
+    </div>
+    <div class="col-xs-7">
+        <div class="form-group" ng-class="{'has-error':model.Customer.LastName.HasError}">
+            <label for="LastName">Nazwisko</label>
+            <input type="text" class="form-control" id="LastName" ng-model="model.Customer.LastName.Value" maxlength="128">
+            <div class="error-annotation" ng-show="model.Customer.LastName.HasError">{{model.Customer.LastName.ErrorMessage}}</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="form-group" ng-class="{'has-error':model.Customer.Email.HasError}">
+            <label for="Email">Email</label>
+            <input type="text" class="form-control" id="Email" ng-model="model.Customer.Email.Value" maxlength="128">
+            <div class="error-annotation" ng-show="model.Customer.Email.HasError">{{model.Customer.Email.ErrorMessage}}</div>
+        </div>
+    </div>
+</div>

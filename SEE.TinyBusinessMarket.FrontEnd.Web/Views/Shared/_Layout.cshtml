@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="program księgowy, faktura VAT, plik JPK, ewidencja przychodów, ewidencja rozchodów, drukowanie faktur, ewidencja składek ZUS NFZ" />
+    <meta name="description" content="Tiny Business" />
+    <title>Tiny Business</title>
+    <base href="@Url.Content("~/")" />
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css"/>
+        <link rel="stylesheet" href="~/lib/angular-busy/dist/angular-busy.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/bootstrap.extension.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="~/lib/angular-busy/dist/angular-busy.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/bootstrap.extension.min.css" />
+    </environment>
+</head>
+<body class="tiny-business">
+    <div class="container container-fluid">
+        <div class="content">
+            <div class="row">
+                <div class="col-xl-10 col-xl-offset-1 col-xs-12">
+                    <div>
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/angular/angular.js"></script>
+        <script src="~/lib/ngLocale/angular-locale_pl-pl.js"></script>
+        <script src="~/lib/angular-route/angular-route.js"></script>
+        <script src="~/lib/angular-busy/dist/angular-busy.js"></script>
+        <script src="~/lib/angular-ui-mask/dist/mask.js"></script>
+        <script src="~/lib/moment/min/moment-with-locales.min.js"></script>
+        <script src="~/js/angular/lib/ng-template/ng-template.js"></script>
+        <script src="~/js/angular/lib/modal-dialog/modal.dialog.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/lib/angular/angular.min.js"></script>
+        <script src="~/lib/ngLocale/angular-locale_pl-pl.js"></script>
+        <script src="~/lib/angular-route/angular-route.min.js"></script>
+        <script src="~/lib/angular-busy/dist/angular-busy.min.js"></script>
+        <script src="~/lib/angular-ui-mask/dist/mask.min.js"></script>
+        <script src="~/lib/moment/min/moment-with-locales.min.js"></script>
+        <script src="~/js/angular/lib/ng-template/ng-template.js"></script>
+        <script src="~/js/angular/lib/modal-dialog/modal.dialog.js"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

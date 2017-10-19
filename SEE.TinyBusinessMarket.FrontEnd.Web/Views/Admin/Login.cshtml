@@ -1,0 +1,40 @@
+@model SEE.TinyBusinessMarket.BackEnd.Common.Contract.LoginContract
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-xl-6 col-xl-offset-3 col-lg-8 col-lg-offset-2 col-xs-12">
+        <form method="post" style="padding:10% 0;">
+            <div class="panel panel-default">
+                <div class="panel-heading">Logowanie do Systemu</div>
+                <div class="panel-body">
+                    @if (!string.IsNullOrWhiteSpace(ViewBag.ErrorMessage))
+                    {
+                        <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                    }
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="Login">Login</label>
+                                <input type="text" class="form-control" id="Login" name="Login" asp-for="Login">
+                            </div>
+                            <div class="form-group">
+                                <label for="Password">Hasło</label>
+                                <input type="password" class="form-control" id="Password" name="Password" asp-for="Password">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="pull-right"><button type="submit" class="btn btn-primary">Zaloguj</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

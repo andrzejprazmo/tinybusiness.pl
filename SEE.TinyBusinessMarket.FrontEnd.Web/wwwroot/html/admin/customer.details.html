@@ -1,0 +1,82 @@
+﻿<div class="panel panel-default" cg-busy="{promise:promise,message:'Proszę czekać...',backdrop:true,delay:0,minDuration:0}">
+    <div class="panel-body">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-xs-9"><h1>Panel administracyjny - portfolio klienta</h1></div>
+                <div class="col-xs-3">
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-primary" ng-click="password(customer)">Hasło jednorazowe</button>
+                        <a href="#/admin/customers" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-condensed">
+                    <tr><td style="width:33%;">Nazwa</td><td><strong>{{customer.Name}}</strong></td></tr>
+                    <tr><td>NIP</td><td><strong>{{customer.Nip}}</strong></td></tr>
+                    <tr><td>Ulica, nr</td><td><strong>{{customer.StreetNumber}}</strong></td></tr>
+                    <tr><td>Kod pocztowy, poczta</td><td><strong>{{customer.ZipCode}} {{customer.City}}</strong></td></tr>
+                    <tr><td>Imię i nazwisko</td><td><strong>{{customer.FirstName}} {{customer.LastName}}</strong></td></tr>
+                    <tr><td>Email</td><td><strong>{{customer.Email}}</strong></td></tr>
+                    <tr><td>Telefon</td><td><strong>{{customer.Phone}}</strong></td></tr>
+                    <tr><td>Data rejestracji</td><td><strong>{{customer.RegisterDate | date: 'yyyy-MM-dd HH:mm'}}</strong></td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <fieldset class="form-section form-group">
+                    <legend>Zamówienia</legend>
+                    <table class="table table-bordered table-hover">
+                        <tr class="active">
+                            <th style="width:1%;">Lp.</th>
+                            <th>Produkt</th>
+                            <th>Data zamówienia</th>
+                            <th>Typ</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                        <tr ng-repeat="ord in orders">
+                            <td class="text-right">{{$index+1}}</td>
+                            <td><strong>{{ord.ProductFullName}}</strong></td>
+                            <td><strong>{{ord.Start | date: 'yyyy-MM-dd HH:mm'}}</strong></td>
+                            <td><strong>{{ord.OrderTypeName}}</strong></td>
+                            <td><strong>{{ord.OrderStatusName}}</strong></td>
+                            <td class="text-nowrap" style="width:5%;">
+                                <button type="button" class="btn btn-sm btn-primary" ng-click="applyLicence(ord)">Przypisz licencję</button>
+                                <a href="Admin/DownloadProForma/{{ord.Id}}" class="btn btn-sm btn-default">Pobierz Pro Forma</a>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <fieldset class="form-section form-group">
+                    <legend>Licencje</legend>
+                    <table class="table table-bordered table-hover">
+                        <tr class="active">
+                            <th style="width:1%;">Lp.</th>
+                            <th>Produkt</th>
+                            <th>Ważna od</th>
+                            <th>Ważna do</th>
+                            <th>Liczba</th>
+                            <th></th>
+                        </tr>
+                        <tr ng-repeat="lcn in licences">
+                            <td class="text-right">{{$index+1}}</td>
+                            <td><strong>{{lcn.ProductFullName}}</strong></td>
+                            <td><strong>{{lcn.ValidFrom | date: 'yyyy-MM-dd'}}</strong></td>
+                            <td><strong>{{lcn.ValidTo | date: 'yyyy-MM-dd'}}</strong></td>
+                            <td class="text-right"><strong>{{lcn.Quantity}}</strong></td>
+                            <td style="width:1%;"><a href="Admin/DownloadInvoice/{{lcn.Id}}" class="btn btn-sm btn-default">Pobierz fakturę VAT</a></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿<div ng-if="completed" class="panel panel-default">
+    <div class="panel-body">
+        <div class="page-title">
+            <h1>Formularz zakupowy</h1>
+        </div>
+        <div class="well well-info">
+            <table class="table table-condensed">
+                <tr><th>Lp.</th><th>Nazwa produktu</th><th>Ilość</th><th>Cena jednostkowa (zł)</th><th>Stawka VAT</th><th>Wartość netto (zł)</th><th>Wartość brutto (zł)</th></tr>
+                <tr>
+                    <td>1.</td>
+                    <td>{{product.FullName}}</td>
+                    <td class="text-right">1</td>
+                    <td class="text-right">{{product.UnitPrice | currency: ''}}</td>
+                    <td class="">{{product.VatRateName}}</td>
+                    <td class="text-right">{{product.UnitPrice | currency: ''}}</td>
+                    <td class="text-right">{{product.GrossPrice | currency: ''}}</td>
+                </tr>
+                <tr><td colspan="6" class="text-right"><strong>RAZEM (zł):</strong></td><td class="text-right"><strong>{{product.GrossPrice | currency: ''}}</strong></td></tr>
+            </table>
+        </div>
+        <div class="alert alert-success">
+            <p class="text-justify">
+                Twoje zamówienie zostało zarejestrowane w naszym Systemie.<br/>
+                Na podany przez Ciebie adres email wysłaliśmy fakturę "pro forma". Aby dokończyć transakcję, prosimy o opłacenie zamówienia na rachunek bankowy widoczny na przesłanej fakturze. 
+                W tytule przelewu prosimy o wpisanie numeru faktury "pro forma", bądź numeru NIP Twojego przedsiębiorstwa. W ciagu 48 godzin od zarejestrowania wpłaty, na podany przez Ciebie adres email 
+                prześlemy link, pod którym będziesz mógł pobrać fakturę VAT oraz zamówione oprogramowanie.<br/>
+                Jeśli nie otrzymałeś wiadomości email, prosimy o kontakt pod adresem email: <a href="mailto:biuro@tinybusiness.pl">biuro@tinybusiness.pl</a>
+            </p>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pull-right">
+                    <a href="#/dashboard" class="btn btn-success">Zakończ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

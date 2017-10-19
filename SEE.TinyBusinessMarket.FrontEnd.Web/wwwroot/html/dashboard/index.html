@@ -1,0 +1,60 @@
+﻿<div ng-if="completed" class="panel panel-default">
+    <div class="panel-body">
+        <div class="page-title">
+            <h1>Tiny Business</h1>
+        </div>
+        <div class="row">
+            <div class="col-xl-9 col-sm-8 col-xs-12">
+                <p class="indent-justify">Witamy na stronie programu <strong>Tiny Business</strong>.</p>
+                <p class="indent-justify">Jeśli planujesz rozpocząć własną działalność gospodarczą, bądź prowadzisz jednosobową firmę, to jest to oprogramowanie właśnie dla Ciebie. 
+                Głównym celem powstania tej aplikacji była chęć wsparcia dla osób, które planują spróbować swoich sił w biznesie i poszukują niedrogiego oprogramowania spełniającego podstawowe 
+                wymagania dotyczące prowadzenia własnej działalności gospodarczej.</p>
+                <p class="indent-justify">Pobierz wersję demonstracyjną aplikacji, aby sprawdzić, czy nasze oprogramowanie spełnia Twoje potrzeby. 
+                Jeśli tak, zapraszamy do zarejestrowania się w naszym Systemie i zakupienia licencji umożliwiającej korzystanie z pełnej wersji oprogramowania. 
+                Zakup licencji umożliwi ci również bezpłatną aktualizację aplikacji do nowych wersji z nowymi funkcjonalnościami.</p>
+                <hr/>
+                <p>Podstawowe funkcjonalności programu:</p>
+                <ul>
+                    <li>Ewidencja oraz drukowanie faktur sprzedażowych.</li>
+                    <li>Ewidencja zakupów.</li>
+                    <li>Ewidencja składek ZUS / NFZ.</li>
+                    <li>Uproszczony bilans przychodów i rozchodów łącznie z prezentacją wyliczonych składek podatku VAT oraz PIT.</li>
+                    <li>Eksport zarejestrowanych faktur zakupowych oraz sprzedażowych do pliku CSV.</li>
+                    <li><strong>Nowość! </strong>Eksport do pliku JPK.</li>
+                </ul>
+                <p>Planowane zmiany:</p>
+                <ul>
+                    <li>Ewidencja czasu pracy (Timesheet)</li>
+                    <li>Wydruk deklaracji VAT</li>
+                    <li>Książka przychodów i rozchodów</li>
+                    <li>Ewidencja środków trwałych</li>
+                </ul>
+                <hr />
+                <ul class="small">
+                    <li>Oprogramowanie nie zawiera żadnych niechcianych dodatków do Twojego systemu operacyjnego.</li>
+                    <li>Wersja demonstracyjna aplikacji jest pozbawiona modułu eksportu faktur do pliku PDF, CSV oraz JPK.</li>
+                </ul>
+            </div>
+            <div class="col-xl-3 col-sm-4 col-xs-12">
+                <div class="well">
+                    <h2><strong>{{dashboard.Product.Name}}</strong></h2>
+                    <div>wersja: <strong>{{dashboard.Product.Version}}</strong></div>
+                    <div>cena: <strong>{{dashboard.Product.UnitPrice | currency}} <span>(+ VAT) </span><span>/</span> rok</strong></div>
+                    <hr />
+                    <p>Wymagania systemowe:</p>
+                    <ul>
+                        <li>Windows 7/8.1/10 64 bit</li>
+                        <li>.NET Framework 4.6</li>
+                        <li>MS SQL Server 2016 CE</li>
+                    </ul>
+                    <p class="text-justify small"><em>Uwaga! Wszystkie potrzebne komponenty znajdują się w pakiecie instalacyjnym.</em></p>
+                    <hr />
+                    <div class="btn-group-vertical btn-group-with-margin">
+                        <a href="Download/Demo/{{dashboard.Product.Id}}" class="btn btn-primary">Pobierz wersję demonstracyjną</a>
+                        <a href="#/payment/{{dashboard.Product.Id}}/start" class="btn btn-success">Kup roczną licencję.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

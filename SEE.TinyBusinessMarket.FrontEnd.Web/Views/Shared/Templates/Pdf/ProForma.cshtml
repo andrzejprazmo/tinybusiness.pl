@@ -1,0 +1,129 @@
+﻿@model SEE.TinyBusinessMarket.BackEnd.Common.Pdf.InvoicePdfModel
+@{
+    int counter = 0;
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Faktura</title>
+    <style>
+        body {
+            padding: 48px;
+            font-size: 9pt;
+        }
+
+        body, td, th {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        td, th {
+            border: solid 1px black;
+            padding: 8px;
+            font-size: 8pt;
+        }
+
+        h1 {
+            font-size: 13pt;
+        }
+
+        p {
+            margin: 0;
+            padding: 2px 0;
+        }
+
+        div {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Faktura pro forma nr @Model.Number</h1>
+    <br />
+    <div>
+        <p><i>Data wystawienia:</i> <b>@Model.ExposureDate.ToString("yyyy-MM-dd")</b></p>
+        <p><i>Miejsce wystawienia:</i> <b>@Model.InvoiceConfig.ExposurePlace</b></p>
+    </div>
+    <br />
+    <table style="width:100%;border:none;">
+        <tr>
+            <td style="width:50%;border:none;background-color:#eee;border:solid 4px #fff;vertical-align:top;">
+                <div style="width:100%;padding:8px;">
+                    <p><i>Sprzedawca:</i></p>
+                    <p><b>@Model.InvoiceConfig.Seller.Name</b></p>
+                    <p><b>@Model.InvoiceConfig.Seller.StreetNumber</b></p>
+                    <p><b>@Model.InvoiceConfig.Seller.ZipCode @Model.InvoiceConfig.Seller.City</b></p>
+                    <p>NIP: <b>@Model.InvoiceConfig.Seller.Nip</b></p>
+                    <p>Nr konta: <b>@Model.InvoiceConfig.Seller.AccountNumber</b></p>
+                    <p><b>@Model.InvoiceConfig.Seller.Bank</b></p>
+                </div>
+            </td>
+            <td style="width:50%;border:none;background-color:#eee;border:solid 4px #fff;vertical-align:top;">
+                <div style="width:100%;padding:8px;">
+                    <p><i>Nabywca:</i></p>
+                    <p><b>@Model.Customer.Name</b></p>
+                    <p><b>@Model.Customer.StreetNumber</b></p>
+                    <p><b>@Model.Customer.ZipCode @Model.Customer.City</b></p>
+                    <p>NIP: <b>@Model.Customer.Nip</b></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="margin-top: 48px;width:100%;border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="width:10px;">#</th>
+                <th>Nazwa</th>
+                <th>PKWiU</th>
+                <th>Ilość</th>
+                <th>Jm.</th>
+                <th>Cena jedn.</th>
+                <th>Stawka VAT</th>
+                <th>Wartość netto</th>
+                <th>Kwota VAT</th>
+                <th>Wartość brutto</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.Products)
+            {
+                <tr>
+                    <td style="text-align:right">@(++counter).</td>
+                    <td>@item.Name</td>
+                    <td>@item.Pkwiu</td>
+                    <td style="text-align:right">@item.Quantity.ToString("0")</td>
+                    <td>@item.MeasureUnitCaption</td>
+                    <td style="text-align:right;white-space:nowrap;">@item.UnitPrice.ToString("#,##0.00") zł</td>
+                    <td style="text-align:right">@item.VatRateCaption</td>
+                    <td style="text-align:right;white-space:nowrap;">@item.NetAmount.ToString("#,##0.00") zł</td>
+                    <td style="text-align:right;white-space:nowrap;">@item.VatAmount.ToString("#,##0.00") zł</td>
+                    <td style="text-align:right;white-space:nowrap;">@item.GrossAmount.ToString("# ##0.00") zł</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <br />
+    <table style="width:100%;border:none;">
+        <tr>
+            <td style="width:50%;border:none;">
+                <div>
+                    <p><i>Do zapłaty:</i> <b>@Model.GrossAmount.ToString("# ##0.00") zł</b></p>
+                    <p><i>Słownie:</i> <b>@Model.GrossAmountStringified</b></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

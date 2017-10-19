@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Serilog" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SEE.TinyBusinessMarket.BackEnd.Common\SEE.TinyBusinessMarket.BackEnd.Common.csproj" />
+    <ProjectReference Include="..\SEE.TinyBusinessMarket.BackEnd.Infrastructure\SEE.TinyBusinessMarket.BackEnd.Infrastructure.csproj" />
+    <ProjectReference Include="..\SEE.TinyBusinessMarket.BackEnd.Localization\SEE.TinyBusinessMarket.BackEnd.Localization.csproj" />
+  </ItemGroup>
+
+</Project>

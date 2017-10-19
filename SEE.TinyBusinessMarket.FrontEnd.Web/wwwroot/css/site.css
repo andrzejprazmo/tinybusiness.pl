@@ -1,0 +1,95 @@
+﻿body.tiny-business {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-image: url(img/bgk6.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-color: #01144b;
+    min-height: 916px;
+}
+
+.tiny-business .content {
+    margin: 24px 0;
+}
+
+.annotation {
+    font-size: 90%;
+}
+
+.info-annotation {
+    font-style: italic;
+    color: #222;
+}
+
+.error-annotation {
+    color: #a94442;
+}
+
+.indent-justify {
+    text-align: justify;
+    text-indent: 1em;
+}
+
+.btn-group-with-margin .btn {
+    margin-bottom: 8px;
+    width: 100%;
+    display: inline-block;
+}
+
+.btn-with-icon-left:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.btn-with-icon-left i {
+    float: left;
+    padding: 4px 8px 4px 2px;
+    border-right: solid 1px #ccc;
+    margin-right: 4px;
+}
+
+.btn-with-icon-left span {
+}
+
+.btn-with-icon-right span {
+    font-weight: normal;
+    padding-right: 8px;
+    margin-right: 4px;
+    border-right: solid 1px #ccc;
+}
+
+.tiny-business fieldset.form-section {
+    border-radius: 8px;
+    border: solid 1px #ccc;
+    padding: 1em;
+}
+
+    .tiny-business fieldset.form-section legend {
+        border: 0;
+        font-size: 100%;
+        margin: 0;
+        padding: 0 1em;
+        display: inline;
+        width: initial;
+    }
+
+/* BOOTSTRAP OVERRIDE*/
+.tiny-business .page-title {
+    padding: 8px 0;
+    margin-bottom: 12px;
+    border-bottom: solid 1px #ddd;
+}
+
+    .tiny-business h1 {
+        margin: 0 0 8px 0;
+        padding: 0;
+        font-size: 24px;
+    }
+    .tiny-business  h2 {
+        margin: 0 0 8px 0;
+        padding: 0;
+        font-size: 18px;
+    }
